@@ -3,108 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - Mon Application</title>
+    <title>Politique de Confidentialité - Application Gestion Congés Division FH</title>
     <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4cb5f5;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --light-color: #fff;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            padding: 0;
-            margin: 0;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background-color: var(--light-color);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--light-color);
-            padding: 2rem 0;
+            background: linear-gradient(135deg, #1a3a8f 0%, #2d5aa0 100%);
+            color: white;
+            padding: 30px 0;
             text-align: center;
-            margin-bottom: 2rem;
+            border-bottom: 5px solid #e63946;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo {
+            height: 70px;
+            margin-right: 15px;
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #166088;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .last-update {
+            background-color: #e63946;
+            color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
         }
         
         h2 {
-            color: var(--secondary-color);
-            margin: 1.5rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
+            color: #1a3a8f;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 22px;
         }
         
         h3 {
-            color: var(--primary-color);
-            margin: 1.2rem 0 0.8rem 0;
+            color: #2d5aa0;
+            margin: 20px 0 10px;
+            font-size: 18px;
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
+            text-align: justify;
         }
         
         ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
+            margin-left: 20px;
+            margin-bottom: 15px;
         }
         
         li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .last-updated {
-            text-align: center;
-            font-style: italic;
-            color: #666;
-            margin-bottom: 2rem;
+            margin-bottom: 8px;
         }
         
         .contact-info {
-            background-color: #e9f7fe;
-            padding: 1.5rem;
+            background-color: #f0f7ff;
+            padding: 20px;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 25px 0;
+            border-left: 4px solid #2d5aa0;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .contact-label {
+            font-weight: 600;
+            min-width: 150px;
+            color: #1a3a8f;
         }
         
         footer {
             text-align: center;
-            margin-top: 3rem;
-            padding: 1rem;
+            padding: 25px 0;
+            margin-top: 40px;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
         }
         
-        @media (max-width: 600px) {
+        .consent-box {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .btn-print {
+            display: inline-block;
+            background-color: #1a3a8f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-print:hover {
+            background-color: #2d5aa0;
+        }
+        
+        @media print {
+            .btn-print {
+                display: none;
+            }
+            
+            header {
+                background: #1a3a8f !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        
+        @media (max-width: 768px) {
             .container {
-                padding: 15px;
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 24px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+            }
+            
+            .contact-label {
+                min-width: auto;
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -112,78 +192,176 @@
 <body>
     <header>
         <div class="container">
-            <h1>Politique de Confidentialité</h1>
-            <p>Pour l'application [Nom de votre application]</p>
+            <div class="logo-container">
+                <!-- Logo factice pour Djibouti Telecom -->
+                <div class="logo" style="background-color: white; width: 70px; height: 70px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #1a3a8f; font-weight: bold; font-size: 12px;">DT<br>FH</span>
+                </div>
+                <div>
+                    <h1>Politique de Confidentialité</h1>
+                    <div class="subtitle">Application de Gestion de Congés - Division FH</div>
+                </div>
+            </div>
+            <div class="last-update">Dernière mise à jour : 22/09/2025</div>
         </div>
     </header>
     
     <div class="container">
-        <p class="last-updated">Dernière mise à jour : [Date]</p>
-        
-        <p>Votre confidentialité est importante pour nous. Cette politique de confidentialité explique quelles données personnelles nous collectons et comment nous les utilisons.</p>
-        
-        <h2>1. Informations que nous collectons</h2>
-        <p>Nous pouvons collecter les types d'informations suivants :</p>
-        
-        <h3>a. Informations que vous nous fournissez directement</h3>
-        <ul>
-            <li>Nom et adresse e-mail lorsque vous nous contactez</li>
-            <li>Informations de profil que vous choisissez de partager</li>
-        </ul>
-        
-        <h3>b. Informations collectées automatiquement</h3>
-        <ul>
-            <li>Données d'utilisation de l'application</li>
-            <li>Informations sur le dispositif (modèle, système d'exploitation)</li>
-            <li>Données de localisation (si vous nous en accordez la permission)</li>
-        </ul>
-        
-        <h2>2. Comment nous utilisons vos informations</h2>
-        <p>Nous utilisons les informations que nous collectons pour :</p>
-        <ul>
-            <li>Fournir, maintenir et améliorer notre application</li>
-            <li>Répondre à vos commentaires et questions</li>
-            <li>Envoyer des informations techniques et des mises à jour</li>
-            <li>Personnaliser votre expérience utilisateur</li>
-        </ul>
-        
-        <h2>3. Partage des informations</h2>
-        <p>Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles à des tiers sans votre consentement, sauf pour :</p>
-        <ul>
-            <li>Se conformer à des obligations légales</li>
-            <li>Protéger nos droits et notre sécurité</li>
-            <li>Fournir le service via des prestataires tiers (qui sont tenus de respecter la confidentialité)</li>
-        </ul>
-        
-        <h2>4. Sécurité des données</h2>
-        <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données personnelles contre tout accès non autorisé, modification, divulgation ou destruction.</p>
-        
-        <h2>5. Vos droits</h2>
-        <p>Vous avez le droit de :</p>
-        <ul>
-            <li>Accéder à vos données personnelles</li>
-            <li>Demander la correction de données incorrectes</li>
-            <li>Demander la suppression de vos données</li>
-            <li>Vous opposer au traitement de vos données</li>
-            <li>Demander la portabilité de vos données</li>
-        </ul>
-        
-        <h2>6. Cookies et technologies similaires</h2>
-        <p>Notre application peut utiliser des cookies et des technologies similaires pour améliorer votre expérience et recueillir des données d'utilisation.</p>
-        
-        <h2>7. Modifications de cette politique</h2>
-        <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous vous informerons de tout changement en publiant la nouvelle politique sur cette page.</p>
-        
-        <div class="contact-info">
-            <h2>8. Nous contacter</h2>
-            <p>Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter à :</p>
-            <p>Email : [votre adresse email]</p>
+        <div class="content">
+            <h2>1. Introduction</h2>
+            <p>Cette politique de confidentialité s'applique à l'application mobile de gestion de congés développée spécifiquement pour la division FH de Djibouti Telecom (ci-après dénommée "l'Application"). Cette Application est destinée exclusivement aux membres autorisés de la division FH de Djibouti Telecom.</p>
+            <p>En utilisant cette Application, vous acceptez les pratiques décrites dans cette politique de confidentialité.</p>
+            
+            <h2>2. Collecte des Informations</h2>
+            
+            <h3>2.1 Informations collectées</h3>
+            <p>L'Application collecte et traite les informations suivantes :</p>
+            <ul>
+                <li>Adresse email</li>
+                <li>Mot de passe (hashé et sécurisé)</li>
+                <li>Données de profil (nom, prénom, photo, service au sein de la division FH)</li>
+                <li>Informations relatives aux congés (dates, types, statuts)</li>
+                <li>Données de connexion (logs d'accès, horaires)</li>
+                <li>Messages échangés avec l'interface d'orientation AI</li>
+                <li>Rôle hiérarchique au sein de la division FH</li>
+            </ul>
+            
+            <h3>2.2 Méthodes de collecte</h3>
+            <p>Les données sont collectées lorsque :</p>
+            <ul>
+                <li>L'administrateur de la division FH crée votre compte</li>
+                <li>Vous vous connectez à l'Application</li>
+                <li>Vous soumettez une demande de congé</li>
+                <li>Vous modifiez votre profil professionnel</li>
+                <li>Vous utilisez la fonctionnalité de chat AI pour orientation</li>
+            </ul>
+            
+            <h2>3. Utilisation des Informations</h2>
+            <p>Les données collectées sont utilisées exclusivement pour :</p>
+            <ul>
+                <li>Authentifier les membres de la division FH</li>
+                <li>Gérer les demandes et approbations de congés internes à la division</li>
+                <li>Faciliter la communication hiérarchique au sein de la division FH</li>
+                <li>Fournir une assistance professionnelle via l'interface AI</li>
+                <li>Maintenir la sécurité et l'intégrité de l'Application</li>
+                <li>Assurer le bon fonctionnement des processus de gestion des congés</li>
+            </ul>
+            
+            <h2>4. Stockage et Sécurité des Données</h2>
+            
+            <h3>4.1 Hébergement des données</h3>
+            <p>Toutes les données sont stockées sur les serveurs Firebase de Google, conformément aux standards de sécurité de Djibouti Telecom. Les données restent propriété exclusive de la division FH de Djibouti Telecom.</p>
+            
+            <h3>4.2 Mesures de sécurité spécifiques à la division FH</h3>
+            <ul>
+                <li>Authentification sécurisée avec contrôle strict des accès</li>
+                <li>Vérification de la version d'application pour maintenir la conformité</li>
+                <li>Séparation des données par division organisationnelle</li>
+                <li>Contrôles d'accès basés sur la hiérarchie de la division FH</li>
+                <li>Audit régulier des accès et des modifications</li>
+            </ul>
+            
+            <h3>4.3 Conservation des données</h3>
+            <p>Les données sont conservées conformément à la politique de rétention des données de Djibouti Telecom et aux besoins opérationnels de la division FH.</p>
+            
+            <h2>5. Partage des Données</h2>
+            
+            <h3>5.1 Partage interne à la division FH</h3>
+            <p>Les données sont partagées strictement selon la structure hiérarchique :</p>
+            <ul>
+                <li>Administrateurs divisionnels : accès complet aux données de la division</li>
+                <li>Chefs de service FH : accès aux données de leur équipe</li>
+                <li>RH de la division : accès selon leurs attributions spécifiques</li>
+                <li>Collaborateurs : accès à leurs données personnelles uniquement</li>
+            </ul>
+            
+            <h3>5.2 Partage externe</h3>
+            <p>Aucune donnée n'est partagée en dehors de la division FH sauf :</p>
+            <ul>
+                <li>Conformément aux procédures internes de Djibouti Telecom</li>
+                <li>Lorsque requis par la réglementation en vigueur</li>
+                <li>Services techniques Firebase (sous contrat de confidentialité)</li>
+            </ul>
+            
+            <h2>6. Fonctionnalités Spécifiques à la Division FH</h2>
+            
+            <h3>6.1 Gestion des rôles hiérarchiques</h3>
+            <p>L'Application respecte la structure organisationnelle de la division FH avec 5 niveaux d'autorisation :</p>
+            <ul>
+                <li>Administrateur divisionnel</li>
+                <li>RH Admin divisionnel</li>
+                <li>RH divisionnel</li>
+                <li>Chef de service FH</li>
+                <li>Interim de chef de service</li>
+                <li>Collaborateur FH</li>
+            </ul>
+            
+            <h3>6.2 Workflow d'approbation des congés</h3>
+            <p>Le processus suit la chaîne hiérarchique de la division FH, avec notifications automatiques aux responsables concernés.</p>
+            
+            <h2>7. Responsabilités Spécifiques</h2>
+            
+            <h3>7.1 Responsabilités de l'Administrateur Divisionnel</h3>
+            <ul>
+                <li>Création et gestion des comptes utilisateurs</li>
+                <li>Attribution des droits d'accès conformément à l'organigramme</li>
+                <li>Maintenance de la sécurité des données</li>
+                <li>Surveillance de l'utilisation de l'Application</li>
+            </ul>
+            
+            <h3>7.2 Responsabilités des Utilisateurs</h3>
+            <ul>
+                <li>Protection de leurs identifiants de connexion</li>
+                <li>Respect des procédures de demande de congés</li>
+                <li>Signalement immédiat de tout problème de sécurité</li>
+            </ul>
+            
+            <h2>8. Conformité et Audit</h2>
+            <p>L'utilisation de l'Application est soumise aux audits internes de Djibouti Telecom et doit respecter :</p>
+            <ul>
+                <li>La politique de sécurité informatique de Djibouti Telecom</li>
+                <li>La réglementation sur la protection des données personnelles</li>
+                <li>Les procédures internes de la division FH</li>
+            </ul>
+            
+            <h2>9. Contact et Support</h2>
+            <div class="contact-info">
+                <p>Pour toute question relative à cette politique ou à la protection des données :</p>
+                <div class="contact-item">
+                    <div class="contact-label">Contact administratif :</div>
+                    <div>Abdourahman Bachir Barkat</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Support technique :</div>
+                    <div>Hamza Houssein Ahmed</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Email :</div>
+                    <div>hamzaha.dt@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Téléphone :</div>
+                    <div>77033344</div>
+                </div>
+            </div>
+            
+            <h2>10. Modifications</h2>
+            <p>Toute modification de cette politique sera notifiée aux utilisateurs via l'Application et validée par la direction de la division FH.</p>
+            
+            <h2>11. Consentement</h2>
+            <div class="consent-box">
+                <p>En utilisant cette Application, vous certifiez être membre de la division FH de Djibouti Telecom et consentez au traitement de vos données dans le cadre décrit ci-dessus.</p>
+                <p><strong>Division FH - Djibouti Telecom</strong></p>
+            </div>
+            
+            <a href="javascript:window.print()" class="btn-print">Imprimer cette politique</a>
         </div>
     </div>
     
     <footer>
         <div class="container">
-            <p>&copy; [Année] [Nom de votre application]. Tous droits réservés.</p>
+            <p>&copy; 2025 Division FH - Djibouti Telecom. Tous droits réservés.</p>
+            <p>Application de Gestion de Congés - Version 1.0</p>
         </div>
     </footer>
 </body>
